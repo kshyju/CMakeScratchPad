@@ -5,8 +5,9 @@
 #include <boost/json.hpp>
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
-using namespace boost::json;
+namespace fs = std::filesystem;
 
 int main()
 {
@@ -17,8 +18,13 @@ int main()
         std::string dir("C:\\Dev\\site");
         std::string fileName("worker.config.json");
         std::string fullPath = dir + "/" + fileName;
-        
         SPDLOG_INFO("fullPath:{}", fullPath);
+
+        //fs::path p(dir);
+        //p.append(fileName);
+        //auto fullPath1 = fs::absolute(p);
+        //SPDLOG_INFO("fullPath1:{}", fullPath1);
+       
 
         std::ifstream ifs(fullPath);
         std::string input(std::istreambuf_iterator<char>(ifs), {});
@@ -26,7 +32,7 @@ int main()
         SPDLOG_INFO("Printing JSON:");
         SPDLOG_INFO(input);
 
-        auto v = parse(input);
+        auto v = boost::json::parse(input);
         boost::json::object& o = v.as_object();
         boost::json::object& d = o.at("description").as_object();
     }
