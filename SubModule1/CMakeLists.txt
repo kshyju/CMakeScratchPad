@@ -13,4 +13,5 @@ if(NOT TARGET spdlog)
 endif()
 target_link_libraries(SubModule1 PRIVATE spdlog::spdlog)
 
-# TODO: Add tests and install targets if needed.
+find_package(Boost REQUIRED COMPONENTS json)
+target_link_libraries(SubModule1 PUBLIC Boost::json)
