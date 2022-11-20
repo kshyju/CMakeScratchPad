@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	cout << "Hello CMake & GH Actions." << endl;
 
 	SPDLOG_DEBUG("This is a debug message.");
 	SPDLOG_INFO("Hello Seattle.");
