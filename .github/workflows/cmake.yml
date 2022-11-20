@@ -35,5 +35,5 @@ jobs:
         # Artifact name
         name: artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: build/SubModule1/Release/*
+        path: ${{github.workspace}}/build/SubModule1/Release/*
 
