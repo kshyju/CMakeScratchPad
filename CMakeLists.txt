@@ -14,6 +14,7 @@ FetchContent_MakeAvailable(vcpkg)
 # NOTE: This must be defined before the first project call
 set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "")
 
+set(CMAKE_CXX_STANDARD 20)
 
 project ("CMakeScratchPad")
 
