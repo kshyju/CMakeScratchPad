@@ -35,6 +35,6 @@ jobs:
         # Artifact name
         name: artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: ${{github.workspace}}/**/SubModule1/Release/SubModule1.exe
+        path: /**/SubModule1/Release/SubModule1.exe
         if-no-files-found: error
 
