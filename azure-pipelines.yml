@@ -18,6 +18,9 @@ steps:
     inputs:
       cmakeArgs: '-S $(Build.SourcesDirectory) -B $(Build.SourcesDirectory)/build'
   - task: CMake@1
-    displayName: 'CMake --build . --config Debug'
+    displayName: 'CMake --build . --config Release'
     inputs:
-      cmakeArgs: '--build $(Build.SourcesDirectory)/build --config Debug --verbose'
+      cmakeArgs: '--build $(Build.SourcesDirectory)/build --config Release --verbose'
+  - script: dir
+    workingDirectory: $(Build.SourcesDirectory)/build/SubModule1/Release
+    displayName: List Release Artifacts
