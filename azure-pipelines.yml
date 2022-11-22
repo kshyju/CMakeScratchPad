@@ -13,7 +13,7 @@ steps:
   - task: CMake@1
     displayName: 'CMake ..'
     inputs:
-      cmakeArgs: '-B /build'
+      cmakeArgs: '-S . -B /build'
   - task: CMake@1
     displayName: 'CMake --build . --config Debug'
     inputs:
