@@ -21,6 +21,10 @@ steps:
     displayName: 'CMake --build . --config Release'
     inputs:
       cmakeArgs: '--build $(Build.SourcesDirectory)/build --config Release --verbose'
+ 
   - script: dir
     workingDirectory: $(Build.SourcesDirectory)/build/SubModule1/Release
     displayName: List Release Artifacts
+
+  - publish: $(Build.SourcesDirectory)/build/SubModule1/Release
+    artifact: drop
