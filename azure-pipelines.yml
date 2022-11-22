@@ -13,3 +13,11 @@ steps:
   - script: dir
     workingDirectory: $(Build.SourcesDirectory)
     displayName: List contents of a BuildDirectory
+  - task: CMake@1
+    displayName: 'CMake ..'
+    inputs:
+      cmakeArgs: '-S $(Build.SourcesDirectory) -B $(Build.SourcesDirectory)/build'
+  - task: CMake@1
+    displayName: 'CMake --build . --config Debug'
+    inputs:
+      cmakeArgs: '--build $(Build.SourcesDirectory)/ --config Debug'
