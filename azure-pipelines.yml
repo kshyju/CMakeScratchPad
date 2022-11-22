@@ -11,14 +11,5 @@ pool:
 
 steps:
   - script: dir
-    workingDirectory: $(Agent.BuildDirectory)
+    workingDirectory: $(Build.SourcesDirectory)
     displayName: List contents of a BuildDirectory
-
-  - task: CMake@1
-    displayName: 'CMake ..'
-    inputs:
-      cmakeArgs: '-S . -B /build'
-  - task: CMake@1
-    displayName: 'CMake --build . --config Debug'
-    inputs:
-      cmakeArgs: '--build . --config Debug'
