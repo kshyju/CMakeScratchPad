@@ -15,6 +15,9 @@ FetchContent_MakeAvailable(vcpkg)
 set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "")
 
 set(CMAKE_CXX_STANDARD 20)
+
+set(VCPKG_INSTALL_OPTIONS "--debug")
+
 project ("CMakeScratchPad")
 
 # Include sub-projects.
