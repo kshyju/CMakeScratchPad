@@ -18,6 +18,9 @@ pool:
 steps:
   # Remember to add this task to allow vcpkg to upload archives via NuGet
   - task: NuGetAuthenticate@1
+    inputs:
+      nuGetServiceConnections: 'FuncNetHostBinaryCacheVcPkgNugetPush'
+      forceReinstallCredentialProvider: true
 
   - script: dir
     workingDirectory: $(Build.SourcesDirectory)
