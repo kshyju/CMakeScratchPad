@@ -11,6 +11,4 @@ if(NOT TARGET spdlog)
     # Stand-alone build
     find_package(spdlog REQUIRED)
 endif()
-target_link_libraries(SubModule1 PRIVATE spdlog::spdlog)
-
-# TODO: Add tests and install targets if needed.
+target_link_libraries(SubModule1 PUBLIC spdlog::spdlog)
