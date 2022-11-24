@@ -16,7 +16,7 @@ set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" 
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(VCPKG_INSTALL_OPTIONS "--debug")
+set(VCPKG_INSTALL_OPTIONS "--debug -ApiKey AzureDevOps")
 
 project ("CMakeScratchPad")
 
