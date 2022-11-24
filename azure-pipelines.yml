@@ -3,6 +3,12 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+- name: VCPKG_BINARY_SOURCES
+  value: 'clear;nuget,https://azfunc.pkgs.visualstudio.com/e6a70c92-4128-439f-8012-382fe78d6396/_packaging/FunctionsNetHostBinaryCache/nuget/v3/index.json,readwrite'
+- name: VCPKG_USE_NUGET_CACHE
+  value: 1
+
 trigger:
 - master
 
@@ -10,6 +16,9 @@ pool:
   vmImage: windows-latest
 
 steps:
+  # Remember to add this task to allow vcpkg to upload archives via NuGet
+  - task: NuGetAuthenticate@1
+
   - script: dir
     workingDirectory: $(Build.SourcesDirectory)
     displayName: List contents of a BuildDirectory
